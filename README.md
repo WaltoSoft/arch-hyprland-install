@@ -1,4 +1,4 @@
-# Billy Walton's Arch Linux environment installation
+# Billy Walton's Arch Linux with Hyprland installer
 
 Welcome to the installation script that sets up my Arch Linux environment the way I want it using Hyprland as the window manager.
 
@@ -9,7 +9,7 @@ This script is meant to be run on a machine that is being logged into by a sudo 
 The following are installed via this script:
 
 1.  Hyprland
-2.  SDDM (With the Sugar Candy Theme) - Login Manager
+2.  SDDM (With the Eucalyptus Drop theme) - Login Manager
 2.  kitty (Terminal)
 3.  Chromium (Web Browser)
 4.  Nautilus (File Manager)
