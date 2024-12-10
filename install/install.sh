@@ -1,4 +1,4 @@
-REPO_NAME=archlinux-environment-installer
+REPO_NAME=arch-hyprland-install
 GIT_DIR=/home/$SUDO_USER/Git
 REPO_DIR=$GIT_DIR/$REPO_NAME
 INSTALL_DIR=$REPO_DIR/install
