@@ -23,8 +23,9 @@ HYPRLAND_AURS=(
   "hyprland-git"
   "sddm-git"
   "uwsm"
-  "sddm-eucalyptus-drop"
+  "xdg-desktop-portal-hyprland"
   "swaync-git"
+  "sddm-eucalyptus-drop"
 )
 
 #These are additional pacman packages I want to install
