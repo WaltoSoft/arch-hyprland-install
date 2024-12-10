@@ -6,31 +6,35 @@ SCRIPTS_DIR=$INSTALL_DIR/scripts
 LOGS_DIR=/var/log/$REPO_NAME
 LOG_FILE="${LOGS_DIR}/$(date '+%Y%m%d%H%M%S').log"
 
-#These are packages I want install, some of them are used
-#in the hyprland dor files that get intalled.
-MY_PACMAN_PACKAGES=(
+#These are pacman packages that are used in my 
+#Hyprland configuration
+HYPRLAND_PACMAN_PACKAGES=(
   "fastfetch"
-  "vim"
   "kitty"
   "chromium"
   "nautilus"
   "wofi"
   "gnome-text-editor"
   "git"
-  "less"
-  "man-db"
 )
 
-#These packages are required for hyprland
+#These packages are required for my hyprland configuration
 HYPRLAND_AURS=(
   "hyprland-git"
   "sddm-git"
   "uwsm"
   "sddm-eucalyptus-drop"
+  "swaync-git"
 )
 
-#These are Aur packages I want to install, some of them are used
-#in the hyprland dor files that get intalled.
+#These are additional pacman packages I want to install
+MY_PACMAN_PACKAGES=(
+  "vim"
+  "less"
+  "man-db"
+)
+
+#These are Aur packages I want to install
 MY_AURS=(
   "visual-studio-code-bin"    
 )
