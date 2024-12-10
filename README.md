@@ -15,6 +15,7 @@ The following are installed via this script:
 4.  Nautilus (File Manager)
 5.  Gnome Text Editor
 6.  Visual Studio Code
+7.  swaync (Notification daemon)
 
 The following additional tools are installed:
 1.  vim (TTY text editor)
