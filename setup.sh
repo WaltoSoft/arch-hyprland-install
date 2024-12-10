@@ -1,7 +1,7 @@
 executeScript() {
   local GIT_DIR=/home/$SUDO_USER/Git
   local REPO_BRANCH=$1
-  local REPO_NAME="archlinux-environment-installer"
+  local REPO_NAME="arch-hyprland-install"
   local REPO_DIR="${GIT_DIR}/${REPO_NAME}"
   local RPEO_URL="https://github.com/waltosoft/${REPO_NAME}.git"
 
