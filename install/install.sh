@@ -16,6 +16,7 @@ HYPRLAND_PACMAN_PACKAGES=(
   "wofi"
   "gnome-text-editor"
   "git"
+  "polkit-gnome"
 )
 
 #These packages are required for my hyprland configuration
