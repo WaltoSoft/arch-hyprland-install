@@ -16,7 +16,6 @@ HYPRLAND_PACMAN_PACKAGES=(
   "wofi"
   "gnome-text-editor"
   "git"
-  "polkit-gnome"
 )
 
 #These packages are required for my hyprland configuration
@@ -26,6 +25,7 @@ HYPRLAND_AURS=(
   "uwsm"
   "xdg-desktop-portal-hyprland-git"
   "swaync-git"
+  "polkit-gnome-git"
   "sddm-eucalyptus-drop"
 )
 
