@@ -24,7 +24,7 @@ HYPRLAND_AURS=(
   "hyprland-git"
   "sddm-git"
   "uwsm"
-  "xdg-desktop-portal-hyprland"
+  "xdg-desktop-portal-hyprland-git"
   "swaync-git"
   "sddm-eucalyptus-drop"
 )
