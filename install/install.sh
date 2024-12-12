@@ -27,7 +27,7 @@ HYPRLAND_AURS=(
   "xdg-desktop-portal-gtk-git"
   "swaync-git"
   "polkit-gnome-git"
-  "sddm-eucalyptus-drop",
+  "sddm-eucalyptus-drop"
   "visual-studio-code-bin"
 )
 
