@@ -33,6 +33,6 @@ The following additional tools are installed:
 
 Items for research
 1. Do I need to configure nautilus for something called inode/directory - See https://github.com/prasanthrangan/hyprdots/blob/main/Scripts/install_pst.sh
-2. 
+2. What flatpaks do I want to install.
 
 
