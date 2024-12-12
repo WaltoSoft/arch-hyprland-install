@@ -2,9 +2,36 @@ executeScript() {
   local pacmanPackages=( ${HYPRLAND_PACMAN_PACKAGES[*]} ${MY_PACMAN_PACKAGES[*]} )
 
   echoText -fc $COLOR_AQUA "Pacman Packages"
-  pacman -Sy >> $LOG_FILE 2> >(tee -a $LOG_FILE >&2)
-  echoText "Updated pacman databases"
+  configurePacman
   installPackagesWithPacman "${pacmanPackages[@]}"
+}
+
+configurePacman() {
+  if [ -f /etc/pacman.conf ] && [ ! -f /etc/pacman.conf.ahi.bkp ]; then
+    echoText "Configuring pacman"
+
+    doit() {  
+      cp /etc/pacman.conf /etc/pacman.conf.ahi.bkp
+      sed -i "/^#Color/c\Color\nILoveCandy
+      /^#VerbosePkgLists/c\VerbosePkgLists
+      /^#ParallelDownloads/c\ParallelDownloads = 5" /etc/pacman.conf
+      
+      sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
+
+      pacman -Syyu >> $LOG_FILE 2> >(tee -a $LOG_FILE >&2)
+      pacman -Fy >> $LOG_FILE 2> >(tee -a $LOG_FILE >&2)
+
+      echoText -c $COLOR_GREEN "pacman configured"
+    }
+
+    if doit ; then
+      echoText -c $COLOR_GREEN "pacman successfully configured"
+    else
+      echoText -c $COLOR_RED "ERROR: An error occurred configuring pacman"
+    fi
+  else
+    echoText -c $COLOR_GREEN "pacman already configured"
+  fi
 }
 
 installPackagesWithPacman() {
