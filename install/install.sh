@@ -27,7 +27,8 @@ HYPRLAND_AURS=(
   "xdg-desktop-portal-gtk-git"
   "swaync-git"
   "polkit-gnome-git"
-  "sddm-eucalyptus-drop"
+  "sddm-eucalyptus-drop",
+  "visual-studio-code-bin"
 )
 
 #These are additional pacman packages I want to install
@@ -39,7 +40,6 @@ MY_PACMAN_PACKAGES=(
 
 #These are Aur packages I want to install
 MY_AURS=(
-  "visual-studio-code-bin"    
 )
 
 COLOR_AQUA=14
