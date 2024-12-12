@@ -20,8 +20,8 @@ executeScript() {
       sed -i "/^GRUB_DEFAULT=/c\GRUB_DEFAULT=saved
       /^GRUB_GFXMODE=/c\GRUB_GFXMODE=1920x1080
       /^GRUB_TERMINAL_OUTPUT=console/c\#GRUB_TERMINAL_OUTPUT=console
-      /^GRUB_THEME=/c\GRUB_THEME=\"${grubThemesFolder}/arch_linux/theme.txt\"
-      /^#GRUB_THEME=/c\GRUB_THEME=\"${grubThemesFolder}/arch_linux/theme.txt\"
+      /^GRUB_THEME=/c\GRUB_THEME=\"${grubThemesFolder}/arch-linux/theme.txt\"
+      /^#GRUB_THEME=/c\GRUB_THEME=\"${grubThemesFolder}/arch-linux/theme.txt\"
       /^#GRUB_SAVEDEFAULT=true/c\GRUB_SAVEDEFAULT=true" $grubConfigFile
 
       echoText "Making the new grub script file"
