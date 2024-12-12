@@ -25,7 +25,7 @@ executeScript() {
       /^#GRUB_SAVEDEFAULT=true/c\GRUB_SAVEDEFAULT=true" $grubConfigFile
 
       echoText "Making the new grub script file"
-      grub-mkconfig -o $grubScriptFile
+      grub-mkconfig -o $grubScriptFile >> $LOG_FILE 2>&1
 
       echoText -c $COLOR_GREEN "Grub ocnfiguration complete!"
     fi
