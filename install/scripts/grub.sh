@@ -15,7 +15,7 @@ executeScript() {
       ensureFolder $grubThemeFolder/arch-linux
 
       echoText "Setting grub theme"
-      tar -C $grubThemeFolder/arch-linux -xf $REPO_DIR/install/assets/arch-linux.tar
+      tar -C $grubThemesFolder/arch-linux -xf $REPO_DIR/install/assets/arch-linux.tar
       
       sudo sed -i "/^GRUB_DEFAULT=/c\GRUB_DEFAULT=saved
       /^GRUB_GFXMODE=/c\GRUB_GFXMODE=1920x1080
