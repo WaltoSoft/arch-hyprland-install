@@ -36,6 +36,14 @@ MY_PACMAN_PACKAGES=(
   "vim"
   "less"
   "man-db"
+  "pavucontrol"
+  "pamixer"
+  "networkmanager"
+  "bluez"
+  "bluez-utils"
+  "blueman"
+  "brightnessctl"
+  "udiskie"
 )
 
 #These are Aur packages I want to install
