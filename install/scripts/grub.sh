@@ -12,9 +12,9 @@ executeScript() {
       cp $grubConfigFile "${grubConfigFile}.ahi.bkp"
       cp $grubScriptFile "${grubScriptFile}.ahi.bkp"
 
-      ensureFolder $grubThemeFolder/arch-linux
+      ensureFolder $grubThemesFolder/arch-linux
 
-      echoText "Setting grub theme"
+      echoText "Setting grub theme to arch-linux"
       tar -C $grubThemesFolder/arch-linux -xf $REPO_DIR/install/assets/arch-linux.tar
       
       sed -i "/^GRUB_DEFAULT=/c\GRUB_DEFAULT=saved
