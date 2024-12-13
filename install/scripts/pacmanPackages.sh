@@ -53,7 +53,7 @@ installPackagesWithPacman() {
   checkThem() {
     local hasErrors=false
 
-    for package in "${packagesToInstall[@]}"
+    for package in "${packagesToInstall[@]}"; do
       if ! $(isInstalledWithPacman $package) ; then
         hasErrors=true
         echoText -c $COLOR_RED "Package ${package} was not installed with pacman"
