@@ -35,29 +35,46 @@ configurePacman() {
 }
 
 installPackagesWithPacman() {
+  local packagesToInstall=()
+
   for package; do
     if $(isInstalledWithPacman $package) ; then
       echoText -c $COLOR_GREEN "pacman package '${package}' is already installed"
     else
-      echoText "Installing pacman package '${package}'"
-
-      doit() {
-        pacman -Sq --noconfirm $package >> $LOG_FILE 2> >(tee -a $LOG_FILE >&2)    
-      }
-
-      if ! doit ; then
-        echoText -c $COLOR_RED "ERROR: Error occurred installing pacman package '${package}"
-        exit 1
-      else
-        if $(isInstalledWithPacman $package) ; then
-          echoText -c $COLOR_GREEN "pacman package '${package}' installed successfully"
-        else
-          echoText -c $COLOR_RED "ERROR: pacman package '${package}' was not installed"
-          exit 1
-        fi
-      fi
+      packagesToInstall += ($package)
     fi
   done;
+
+  installThem() {
+    echoText "The following packages will be intalled with pacman: ${!packagesToInstall[*]}"
+    pacman -Sq --noconfirm "${packagesToInstall[@]}" >> $LOG_FILE 2> >(tee -a $LOG_FILE >&2)    
+  }
+
+  checkThem() {
+    local hasErrors=false
+
+    for package in "${packagesToInstall[@]}"
+      if ! isInstalledWithPacman package ; then
+        hasErrors=true
+        echoText -c $COLOR_RED "Package ${package} was not installed with pacman"
+      else
+        echoText "Package '${package}' was successfully installed with pacman"
+      fi
+    done
+
+    echo ! hasErrors;
+  }
+
+  if installThem ; then
+    if checkThem ; then
+      echoText -c $COLOR_GREEN "All packages were successfully installed with pacman"
+    else
+      exit 1
+    fi
+  else
+    echoText -c $COLOR_RED "An error occurred while installing packages with pacman"
+    exit 1
+  fi
 }
 
 isInstalledWithPacman() {
