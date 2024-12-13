@@ -41,7 +41,7 @@ installPackagesWithPacman() {
     if $(isInstalledWithPacman $package) ; then
       echoText -c $COLOR_GREEN "pacman package '${package}' is already installed"
     else
-      packagesToInstall += ("${package}")
+      packagesToInstall+=("${package}")
     fi
   done;
 
