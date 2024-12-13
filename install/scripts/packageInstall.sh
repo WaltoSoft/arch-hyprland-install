@@ -100,7 +100,7 @@ installPackages() {
 }
 
 installYay() {
-  if ! $(isInstalledWithPacman 'yay-git') ; then
+  if ! $(isPackageInstalled 'yay-git') ; then
     echoText "yay is not installed.  Building and installing yay from code"
     removeExistingFolder $yayGitFolder
     cloneRepo $yayUrl $yayGitFolder
@@ -116,7 +116,7 @@ installYay() {
       exit 1
     fi
 
-    if $(isInstalledWithPacman 'yay-git') ; then
+    if $(isPackageInstalled 'yay-git') ; then
       echoText -c $COLOR_GREEN "yay-git installed successfully"
       rm -rf $yayGitFolder
     else

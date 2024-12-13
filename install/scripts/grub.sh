@@ -3,7 +3,7 @@ executeScript() {
   local grubConfigFile=/etc/default/grub
   local grubThemesFolder=/usr/share/grub/themes
 
-  if isInstalledWithPacman grub && [ -f $grubScriptFile ] ; then
+  if isPackageInstalled grub && [ -f $grubScriptFile ] ; then
     if [ ! -f "${grubConfigFile}.ahi.bkp" ] && [ ! -f "${grubScriptFile}.ahi.bkp" ]; then
       echoText -fc $COLOR_AQUA "Grub"
 
