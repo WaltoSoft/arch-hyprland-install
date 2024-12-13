@@ -118,6 +118,7 @@ installYay() {
 
     if $(isInstalledWithPacman 'yay-git') ; then
       echoText -c $COLOR_GREEN "yay-git installed successfully"
+      rm -rf $yayGitFolder
     else
       echoText -c $COLOR_RED "ERROR: yay-git failed to install"
       exit 1

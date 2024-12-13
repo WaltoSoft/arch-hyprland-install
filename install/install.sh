@@ -1,16 +1,18 @@
 executeScript() {
   set -e
+
+  local scriptsDir=$(dirname "$(realpath "$0")")
   
-  source $SCRIPTS_DIR/library.sh
-  source $SCRIPTS_DIR/validateSudo.sh
-  source $SCRIPTS_DIR/start.sh
-  source $SCRIPTS_DIR/pacmanPackages.sh
-  source $SCRIPTS_DIR/aurPackages.sh
-  source $SCRIPTS_DIR/dotfiles.sh
-  source $SCRIPTS_DIR/bashrc.sh
-  source $SCRIPTS_DIR/sddm.sh
-  source $SCRIPTS_DIR/grub.sh
-  source $SCRIPTS_DIR/reboot.sh
+  source $scriptsDir/library.sh
+  source $scriptsDir/validateSudo.sh
+  source $scriptsDir/start.sh
+  source $scriptsDir/pacmanPackages.sh
+  source $scriptsDir/aurPackages.sh
+  source $scriptsDir/dotfiles.sh
+  source $scriptsDir/bashrc.sh
+  source $scriptsDir/sddm.sh
+  source $scriptsDir/grub.sh
+  source $scriptsDir/reboot.sh
 }
 
 executeScript
