@@ -29,6 +29,7 @@ HYPRLAND_AURS=(
   "polkit-gnome-git"
   "sddm-eucalyptus-drop"
   "visual-studio-code-bin"
+  "waybar-git"
 )
 
 #These are additional pacman packages I want to install
