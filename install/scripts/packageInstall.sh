@@ -69,10 +69,10 @@ installPackages() {
 
   installYayPackages() {
     if [[ ${#aursToInstall[@]} -gt 0 ]] ; then
-      echoText "Installing aur packages"
+      echoText "Installing yay packages"
       sudo -u $SUDO_USER yay -Sq --noconfirm "${aursToInstall[@]}" >> $LOG_FILE 2>&1  }
     else
-      echoText "No aur packages to install"
+      echoText "No yay packages to install"
     fi
   }
 
