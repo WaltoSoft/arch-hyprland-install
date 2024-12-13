@@ -1,4 +1,14 @@
-AURFOLDER="/home/${SUDO_USER}/.aurtmp"
+REPO_NAME=arch-hyprland-install
+GIT_DIR=/home/$SUDO_USER/Git
+REPO_DIR=$GIT_DIR/$REPO_NAME
+INSTALL_DIR=$REPO_DIR/install
+SCRIPTS_DIR=$INSTALL_DIR/scripts
+LOGS_DIR=/var/log/$REPO_NAME
+LOG_FILE="${LOGS_DIR}/$(date '+%Y%m%d%H%M%S').log"
+
+COLOR_AQUA=14
+COLOR_GREEN=10
+COLOR_RED=9
 
 askUser() {
   local OPTIND=1
