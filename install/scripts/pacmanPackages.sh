@@ -41,7 +41,7 @@ installPackagesWithPacman() {
     if $(isInstalledWithPacman $package) ; then
       echoText -c $COLOR_GREEN "pacman package '${package}' is already installed"
     else
-      packagesToInstall += ($package)
+      packagesToInstall += ("${package}")
     fi
   done;
 
@@ -54,7 +54,7 @@ installPackagesWithPacman() {
     local hasErrors=false
 
     for package in "${packagesToInstall[@]}"
-      if ! isInstalledWithPacman package ; then
+      if ! $(isInstalledWithPacman $package) ; then
         hasErrors=true
         echoText -c $COLOR_RED "Package ${package} was not installed with pacman"
       else
