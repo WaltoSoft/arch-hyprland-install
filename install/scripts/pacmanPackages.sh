@@ -46,7 +46,7 @@ installPackagesWithPacman() {
   done;
 
   installThem() {
-    echoText "The following packages will be intalled with pacman: ${!packagesToInstall[*]}"
+    echoText "The following packages will be intalled with pacman: ${!packagesToInstall[@]}"
     pacman -Sq --noconfirm "${packagesToInstall[@]}" >> $LOG_FILE 2> >(tee -a $LOG_FILE >&2)    
   }
 
