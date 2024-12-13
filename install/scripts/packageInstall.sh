@@ -4,6 +4,7 @@ executeScript() {
   local yayUrl='https://aur.archlinux.org/yay-git'
   local yayGitFolder="${GIT_DIR}/yay-git"
 
+  echoText -fc $COLOR_AQUA "Packages"
   configurePacman
   installYay
   installPackages
