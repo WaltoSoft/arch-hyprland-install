@@ -11,6 +11,7 @@ executeScript() {
   source $scriptsDir/dotfiles.sh
   source $scriptsDir/bashrc.sh
   source $scriptsDir/sddm.sh
+  source $scriptsDir/enableServices.sh
   source $scriptsDir/grub.sh
   source $scriptsDir/reboot.sh
 }

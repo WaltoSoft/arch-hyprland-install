@@ -10,7 +10,6 @@ executeScript() {
   copyDefaultConfiguration
   configureThemes
   selectTheme
-  enableSDDM  
 }
 
 copyDefaultConfiguration() {
@@ -42,19 +41,6 @@ selectTheme() {
 
     echoText "Selected Theme: ${selectedTheme}"
     python $iniUpdateScript $sddmConfigFile Theme Current $selectedTheme
-  fi
-}
-
-enableSDDM () {
-  doit() {
-    systemctl enable sddm.service >> $LOG_FILE 2> >(tee -a $LOG_FILE >&2)
-  }
-
-  if ! doit ; then
-    echoText -c $COLOR_RED "ERROR: Unable to start sddm service"
-    exit 1
-  else
-    echoText -c $COLOR_GREEN "SDDM Enabled"
   fi
 }
 
